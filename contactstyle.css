@@ -1,0 +1,12 @@
+body {
+    background-image: url("kalkulaator2.png");
+    margin: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.head-container {
+    display: flex;
+    justify-content: flex-end;
+    
+}

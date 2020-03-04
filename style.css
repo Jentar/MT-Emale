@@ -1,0 +1,36 @@
+
+body {
+    background-image: url("esilehetaust2.png");
+    margin: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.head-container {
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.head-text {
+    font-size: 20px;
+    font-family: 'Spartan', sans-serif;
+    color: white;
+    margin:20px;
+    margin-top: 65px;
+    margin-right: 60px;
+}
+
+.sitt {
+    margin-top: 140px;
+    margin: center;
+    color: white;
+    text-align: center;
+    font-family: 'Spartan', sans-serif;
+    font-size: 25px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
