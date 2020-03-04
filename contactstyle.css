@@ -1,12 +1,93 @@
 body {
-    background-image: url("kalkulaator2.png");
+    background-image: url("contacttaust.png");
     margin: center;
     background-attachment: fixed;
     background-size: cover;
 }
 
+a {
+    color: rgb(190, 24, 177);
+    text-decoration: none;
+}
+
+
 .head-container {
     display: flex;
     justify-content: flex-end;
     
+}
+
+.head-text {
+    font-size: 20px;
+    font-family: 'Spartan', sans-serif;
+    color: white;
+    margin:20px;
+    margin-top: 65px;
+    margin-right: 60px;
+}
+
+.teave {
+    font-family: 'Spartan', sans-serif;
+    margin-top: 300px;
+    margin: center;
+    font-weight: bold;
+    margin-left: 1250px;
+    color: white;
+    font-size: 25px;
+}
+
+.info {
+    font-family: 'Spartan', sans-serif;
+    margin-top: 62px;
+    font-weight: bold;
+    margin: center;
+    margin-left: 810px;
+    color: white;
+    font-size: 25px;
+}
+
+.asutamine {
+    font-family: 'Spartan', sans-serif;
+    margin-top: 20px;
+    margin: center;
+    margin-left: 810px;
+    color: white;
+    font-size: 20px;
+}
+
+.kontakt_info {
+    font-family: 'Spartan', sans-serif;
+    margin-top: 117px;
+    font-weight: bold;
+    margin: center;
+    margin-left: 810px;
+    color: white;
+    font-size: 25px;
+}
+
+.telefon {
+    font-family: 'Spartan', sans-serif;
+    margin-top: 25px;
+    margin: center;
+    margin-left: 810px;
+    color: white;
+    font-size: 20px;
+}
+
+.msng {
+    font-family: 'Spartan', sans-serif;
+    margin-top: 0px;
+    margin: center;
+    margin-left: 810px;
+    color: white;
+    font-size: 20px;
+}
+
+.fb {
+    font-family: 'Spartan', sans-serif;
+    margin-top: 0px;
+    margin: center;
+    margin-left: 810px;
+    color: white;
+    font-size: 20px;
 }

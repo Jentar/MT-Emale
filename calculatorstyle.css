@@ -1,0 +1,81 @@
+body {
+    background-image: url("kalkukaaas.png");
+    margin: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+a {
+    color: rgb(190, 24, 177);
+    text-decoration: none;
+}
+
+
+.head-container {
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.head-text {
+    font-size: 20px;
+    font-family: 'Spartan', sans-serif;
+    color: white;
+    margin:20px;
+    margin-top: 65px;
+    margin-right: 60px;
+}
+
+.Pealkiri {
+    margin-top: -595px;
+    margin-left: 717px;
+    color: white;
+    font-family: 'Spartan', sans-serif;
+    font-size: 25px;
+}
+
+.Amet {
+    margin-top: 50px;
+    margin-left: 525px;
+    color: rgb(255, 255, 255);
+    font-family: 'Spartan', sans-serif;
+    font-size: 25px;
+}
+
+.Tootunnid {
+    margin-top: 53px;
+    margin-left: 525px;
+    color: rgb(255, 255, 255);
+    font-family: 'Spartan', sans-serif;
+    font-size: 25px;
+}
+
+.Sissetulek {
+    margin-top: 355px;
+    margin-left: 525px;
+    color: rgb(255, 255, 255);
+    font-family: 'Spartan', sans-serif;
+    font-size: 25px;
+}
+.statistika {
+    margin-top: -350px;
+    margin-left: 1375px;
+    color: rgb(156, 6, 144);
+    font-family: 'Spartan', sans-serif;
+    font-size: 25px;
+}
+
+.eriala {
+    margin-left: 800px;
+    margin-top: 330px;
+}
+
+.tunnid {
+    margin-left: 800px;
+    margin-top: 60px;
+}
+
+.summa {
+    margin-left: 800px;
+    margin-top: 365px;
+}
