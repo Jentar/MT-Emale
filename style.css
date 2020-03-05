@@ -1,6 +1,9 @@
-
+* {
+    padding: 0px;
+    margin: 0px;
+}
 body {
-    background-image: url("esilehetaust2.png");
+    background-image: url("esilehetaust1.png");
     margin: center;
     background-attachment: fixed;
     background-size: cover;
@@ -22,7 +25,7 @@ body {
 }
 
 .tutvustus {
-    margin-top: 490px;
+    margin-top: 200px;
     margin: center;
     color: white;
     text-align: center;
@@ -33,4 +36,13 @@ body {
 a {
     color: white;
     text-decoration: none;
+}
+
+.info {
+    background-color: rgba(187, 6, 118, 0.4);
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
 }
