@@ -1,5 +1,10 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
 body {
-    background-image: url("kalkukaaas.png");
+    background-image: url("oigetaust.png");
     margin: center;
     background-attachment: fixed;
     background-size: cover;
