@@ -1,13 +1,7 @@
-* {
-    padding: 0px;
-    margin: 0px;
-}
+.sisu{
+    display: flex;
+    flex-direction: column;
 
-body {
-    background-image: url("oigetaust.png");
-    margin: center;
-    background-attachment: fixed;
-    background-size: cover;
 }
 
 a {
@@ -68,19 +62,4 @@ a {
     color: rgb(156, 6, 144);
     font-family: 'Spartan', sans-serif;
     font-size: 25px;
-}
-
-.eriala {
-    margin-left: 800px;
-    margin-top: 330px;
-}
-
-.tunnid {
-    margin-left: 800px;
-    margin-top: 60px;
-}
-
-.summa {
-    margin-left: 800px;
-    margin-top: 365px;
 }
