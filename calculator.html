@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="calculatorstyle.css">
     <link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <title>Kalkulaator</title>
 </head>
 <body>
     
@@ -16,41 +18,53 @@
         <div class="head-text"><a href="contacts.html">KONTAKTID</a></div>
     </div>
  
-    <div>
+    <div class="sisu">
             
         <div class="eriala">
-            <label for="eriala"></label>
-            <select name="eriala" id="eriala">
-                <option value="">Nõudepesija</option>
-                <option value="">Koristaja</option>
-                <option value="">Õpetaja</option>
-                <option value="">Autojuht</option>
-                <option value="">Lapsehoidja</option>
-                <option value="">Kokk</option>
-                <option value="">Elektrik</option>
-                <option value="">Tehnik</option>
-                <option value="">Maaler</option>
-                <option value="">Nõustaja</option>
-                <option value="">Medõde</option>
-                <option value="">Ehitaja</option>
-                <option value="">Ettelugeja</option>
-                <option value="">Õmbleja</option>
-                <option value="">Logistik</option>
-                <option value="">Juuksur</option>
-                <option value="">Psühholoog</option>
-                <option value="">Aednik</option>
-                <option value="">Torumees</option>
+            <label for="eriala">Eriala/amet</label>
+            <select name="eriala" id="eriala" onchange="showSalary(this.value);">
+                <option value="0"></option>
+                <option value="13:0:0:0">Nõudepesija</option>
+                <option value="13:0:0:0">Koristaja</option>
+                <option value="1:0:0:0">Õpetaja</option>
+                <option value="12:0:0:0">Autojuht</option>
+                <option value="7:0:0:0">Lapsehoidja</option>
+                <option value="0:0:0:0">Kokk</option>
+                <option value="10:0:0:0">Elektrik</option>
+                <option value="5:0:0:0">Tehnik</option>
+                <option value="8:0:0:0">Maaler</option>
+                <option value="4:0:0:0">Nõustaja</option>
+                <option value="2:0:0:0">Medõde</option>
+                <option value="8:0:0:0">Ehitaja</option>
+                <option value="4:0:0:0">Laulja/näitleja</option>
+                <option value="11:0:0:0">Õmbleja</option>
+                <option value="3:0:0:0">Raamatupidaja</option>
+                <option value="3:0:0:0">Logistik</option>
+                <option value="6:0:0:0">Juuksur</option>
+                <option value="4:0:0:0">Psühholoog</option>
+                <option value="14:0:0:0">Aednik</option>
+                <option value="9:0:0:0">Torumees</option>
             </select>
         </div>
         
         <div class="tunnid">
-            <label for="tunnid"></label>
-            <input type="number" name="tunnid" id="tunnid">
+            <label for="tunnid">Töötunnid</label>
+            <input type="number" name="tunnid" id="tunnid" step="0.5" min="0">
         </div>
 
         <div class="summa">
-            <label for="">Kogusumma</label>   
-        </div>   
+            <label for="">Kogusumma</label>
+            <input type="number" id="sum" readonly>   
+        </div>
+
+        <div>
+            <input type="button" value="Lisa" onclick="Calculate();">
+        </div>
+        
+        <div id="ajalugu">
+
+        </div>
+
     </div>
 
     <div class="Pealkiri">
@@ -74,4 +88,38 @@
         <a href="https://www.stat.ee/andmebaas" target="_blank">https://www.stat.ee/andmebaas</a>
     </div>
 </body>
+<script>
+    var tuludarray = []
+    function showSalary(tasu){
+        
+        const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        const url = "http://andmebaas.stat.ee/sdmx-json/data/PA627/5+8+13+14+15+16+21+23+28+29+31+32+35+36+37.3.1/all?startTime=2014&endTime=2014&dimensionAtObservation=allDimensions";
+        $.getJSON(proxyurl + url, function(data) {
+            var amet = document.getElementById('eriala');
+            var palk = amet.options[amet.selectedIndex].value;
+            var text = `${data.dataSets["0"].observations[palk]["0"]}`
+            document.getElementById('sum').value = parseFloat(text).toFixed(2);
+        });
+        
+    }
+
+    function Calculate() {
+        var tunnipalk = parseFloat(document.getElementById('sum').value).toFixed(2);
+        var tunnid = parseFloat(document.getElementById('tunnid').value).toFixed(2);
+        var kogupalk = parseFloat(tunnid * tunnipalk).toFixed(2);
+        var amet = document.getElementById('eriala');
+        var eriala = amet.options[amet.selectedIndex].text;
+        var ajalugu = document.createElement("p");
+        document.getElementById('ajalugu').appendChild(ajalugu)
+        ajalugu.innerText = eriala + " " + tunnid + " " +  kogupalk
+        tuludarray.push(parseFloat(kogupalk))
+        kogusumma()
+    }
+
+    function kogusumma() {
+        var tulusumma = parseFloat(tuludarray.reduce((a,b) => a+b,).toFixed(2));
+        console.log(tulusumma)
+    }
+
+</script>
 </html>
