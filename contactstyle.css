@@ -1,5 +1,11 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Spartan', sans-serif;
+}
+
 body {
-    background-image: url("contacttaust.png");
+    background-image: url("oigetaust.jpg");
     margin: center;
     background-attachment: fixed;
     background-size: cover;
@@ -26,68 +32,57 @@ a {
     margin-right: 60px;
 }
 
-.teave {
-    font-family: 'Spartan', sans-serif;
-    margin-top: 300px;
-    margin: center;
-    font-weight: bold;
-    margin-left: 1250px;
-    color: white;
-    font-size: 25px;
+.info {
+    background-color: rgba(187, 6, 118, 0.4);
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    flex-direction: column;
+    margin: 0 450px;
+    margin-top: 120px;
+
 }
 
-.info {
-    font-family: 'Spartan', sans-serif;
-    margin-top: 62px;
-    font-weight: bold;
-    margin: center;
-    margin-left: 810px;
+.teave {
+    text-align: center;
+    font-size: 30px;
     color: white;
-    font-size: 25px;
+}
+
+.mtyinfo {
+    font-size: 23px;
+    color: white;
+}
+
+hr {
+    width:100%;
+    border: 0.5px solid white;
 }
 
 .asutamine {
-    font-family: 'Spartan', sans-serif;
-    margin-top: 20px;
-    margin: center;
-    margin-left: 810px;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
+    margin-top: 5px;
 }
 
-.kontakt_info {
-    font-family: 'Spartan', sans-serif;
-    margin-top: 117px;
-    font-weight: bold;
-    margin: center;
-    margin-left: 810px;
+.kontaktinfo {
     color: white;
-    font-size: 25px;
+    font-size: 22px;
+    margin-top: 5px;
 }
-
 .telefon {
-    font-family: 'Spartan', sans-serif;
-    margin-top: 25px;
-    margin: center;
-    margin-left: 810px;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
+    margin-top: 5px;
 }
 
 .msng {
-    font-family: 'Spartan', sans-serif;
-    margin-top: 0px;
-    margin: center;
-    margin-left: 810px;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
+    margin-top: 5px;
 }
-
 .fb {
-    font-family: 'Spartan', sans-serif;
-    margin-top: 0px;
-    margin: center;
-    margin-left: 810px;
-    color: white;
-    font-size: 20px;
+
+    margin-top: 5px;
 }
