@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="calculatorstyle.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
@@ -11,114 +12,118 @@
     <title>Kalkulaator</title>
 </head>
 <body>
-    
     <div class="head-container">
         <div class="head-text"><a href="index.html">AVALEHT</a></div>
         <div class="head-text"><a href="calculator.html">KALKULAATOR</a></div>
         <div class="head-text"><a href="contacts.html">KONTAKTID</a></div>
     </div>
  
-    <div class="sisu">
+        
+
+        <div class="kalk">
+
+            <div class="Pealkiri">
+                <p>Emade ametikalkulaator</p>
+            </div>
             
-        <div class="eriala">
-            <label for="eriala">Eriala/amet</label>
-            <select name="eriala" id="eriala" onchange="showSalary(this.value);">
-                <option value="0"></option>
-                <option value="13:0:0:0">Nõudepesija</option>
-                <option value="13:0:0:0">Koristaja</option>
-                <option value="1:0:0:0">Õpetaja</option>
-                <option value="12:0:0:0">Autojuht</option>
-                <option value="7:0:0:0">Lapsehoidja</option>
-                <option value="0:0:0:0">Kokk</option>
-                <option value="10:0:0:0">Elektrik</option>
-                <option value="5:0:0:0">Tehnik</option>
-                <option value="8:0:0:0">Maaler</option>
-                <option value="4:0:0:0">Nõustaja</option>
-                <option value="2:0:0:0">Medõde</option>
-                <option value="8:0:0:0">Ehitaja</option>
-                <option value="4:0:0:0">Laulja/näitleja</option>
-                <option value="11:0:0:0">Õmbleja</option>
-                <option value="3:0:0:0">Raamatupidaja</option>
-                <option value="3:0:0:0">Logistik</option>
-                <option value="6:0:0:0">Juuksur</option>
-                <option value="4:0:0:0">Psühholoog</option>
-                <option value="14:0:0:0">Aednik</option>
-                <option value="9:0:0:0">Torumees</option>
-            </select>
+                
+            <div class="eriala">
+                <label for="eriala">Eriala/amet</label>
+                <select name="eriala" id="eriala" onchange="tunniPalk();">
+                    <option value="0"></option>
+                    <option value="13:0:0:0">Nõudepesija</option>
+                    <option value="13:0:0:0">Koristaja</option>
+                    <option value="1:0:0:0">õpetaja</option>
+                    <option value="12:0:0:0">Autojuht</option>
+                    <option value="7:0:0:0">Lapsehoidja</option>
+                    <option value="0:0:0:0">Kokk</option>
+                    <option value="10:0:0:0">Elektrik</option>
+                    <option value="5:0:0:0">Tehnik</option>
+                    <option value="8:0:0:0">Maaler</option>
+                    <option value="4:0:0:0">Nõustaja</option>
+                    <option value="2:0:0:0">Medõde</option>
+                    <option value="8:0:0:0">Ehitaja</option>
+                    <option value="4:0:0:0">Laulja/näitleja</option>
+                    <option value="11:0:0:0">Rätsep</option>
+                    <option value="3:0:0:0">Raamatupidaja</option>
+                    <option value="3:0:0:0">Logistik</option>
+                    <option value="6:0:0:0">Juuksur</option>
+                    <option value="4:0:0:0">Psühholoog</option>
+                    <option value="14:0:0:0">Aednik</option>
+                    <option value="9:0:0:0">Torumees</option>
+                </select>
+            </div>
+            
+            <div class="tunnid">
+                <label for="tunnid">Töötunnid</label>
+                <input type="number" name="tunnid" id="tunnid" step="0.5" min="0">
+            </div>
+
+            <div class="tunnipalk">
+                <label for="">Tunnipalk</label>
+                <input type="number" id="tunnipalk" readonly step="0.01">
+            </div>
+
+            <div class="button">
+            <input type="button" value="Lisa" onclick="arvuta(), puhasta()">
+            </div>
+            
+            <div class="kogutulu">
+                <label for="kogutulu">Kogu tulu</label>
+                <input type="number" id="kogutulu" readonly step="0.01">
+            </div>
+
+            <div id="ajalugu">
+
+            </div>
+
         </div>
+
         
-        <div class="tunnid">
-            <label for="tunnid">Töötunnid</label>
-            <input type="number" name="tunnid" id="tunnid" step="0.5" min="0">
-        </div>
-
-        <div class="summa">
-            <label for="">Kogusumma</label>
-            <input type="number" id="sum" readonly>   
-        </div>
-
-        <div>
-            <input type="button" value="Lisa" onclick="Calculate();">
-        </div>
         
-        <div id="ajalugu">
-
+        <div class="statistika">
+            <p>Andmed on võetud 2014.aasta statistika põhjal</p> 
+            <a href="https://www.stat.ee/andmebaas" target="_blank">https://www.stat.ee/andmebaas</a>
         </div>
 
-    </div>
-
-    <div class="Pealkiri">
-        <p>Emade ametikalkulaator</p>
-    </div>
-
-    <div class="Amet">
-        <p>Amet:</p>
-    </div>
-
-    <div class="Tootunnid">
-        <p>Töötunnid:</p>
-    </div>
- 
-    <div class="Sissetulek">
-        <p>Sissetulek kokku:</p>
-    </div>
-    
-    <div class="statistika">
-        <p>Andmed on võetud 2014.aasta statistika põhjal</p> 
-        <a href="https://www.stat.ee/andmebaas" target="_blank">https://www.stat.ee/andmebaas</a>
-    </div>
 </body>
 <script>
-    var tuludarray = []
-    function showSalary(tasu){
-        
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        const url = "http://andmebaas.stat.ee/sdmx-json/data/PA627/5+8+13+14+15+16+21+23+28+29+31+32+35+36+37.3.1/all?startTime=2014&endTime=2014&dimensionAtObservation=allDimensions";
-        $.getJSON(proxyurl + url, function(data) {
+    var tulud = []
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const url = "http://andmebaas.stat.ee/sdmx-json/data/PA627/5+8+13+14+15+16+21+23+28+29+31+32+35+36+37.3.1/all?startTime=2014&endTime=2014&dimensionAtObservation=allDimensions";
+    var query = $.getJSON(proxyurl + url, function(data){});
+    //console.log(query)
+
+    function tunniPalk(){        
+         
             var amet = document.getElementById('eriala');
             var palk = amet.options[amet.selectedIndex].value;
-            var text = `${data.dataSets["0"].observations[palk]["0"]}`
-            document.getElementById('sum').value = parseFloat(text).toFixed(2);
-        });
-        
+            var text = `${query.responseJSON.dataSets["0"].observations[palk]["0"]}`
+            document.getElementById('tunnipalk').value = parseFloat(text).toFixed(2);        
     }
 
-    function Calculate() {
-        var tunnipalk = parseFloat(document.getElementById('sum').value).toFixed(2);
+    function arvuta() {
+        var tunnipalk = parseFloat(document.getElementById('tunnipalk').value).toFixed(2);
         var tunnid = parseFloat(document.getElementById('tunnid').value).toFixed(2);
         var kogupalk = parseFloat(tunnid * tunnipalk).toFixed(2);
         var amet = document.getElementById('eriala');
         var eriala = amet.options[amet.selectedIndex].text;
         var ajalugu = document.createElement("p");
         document.getElementById('ajalugu').appendChild(ajalugu)
-        ajalugu.innerText = eriala + " " + tunnid + " " +  kogupalk
-        tuludarray.push(parseFloat(kogupalk))
+        ajalugu.innerText = eriala + "\u00A0 \u00A0 \u00A0" + tunnid + "\u00A0 \u00A0 \u00A0" +  kogupalk
+        tulud.push(parseFloat(kogupalk))
         kogusumma()
     }
 
     function kogusumma() {
-        var tulusumma = parseFloat(tuludarray.reduce((a,b) => a+b,).toFixed(2));
-        console.log(tulusumma)
+        var tulusumma = parseFloat(tulud.reduce((a,b) => a+b,).toFixed(2));
+        document.getElementById('kogutulu').value = tulusumma
+    }
+
+    function puhasta() {
+        document.getElementById('eriala').value = "0";
+        document.getElementById('tunnid').value = "";
+        document.getElementById('tunnipalk').value = "";
     }
 
 </script>
